@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <div class="span6" style="float: none; margin: 0 auto;">
+            <div class="jumbotron">
+                <h2>Belly Button Biodiversity Dashboard</h2>
+                <hr>
+                <p>By Sunday Joseph</p>
+
+            </div>
+            <div class=" jumbotron span6" style="float: none; margin: 0 auto;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Select Sample:</h4>
+                        <select class="row" id="selDataset" onchange="optionChanged(this.value)"></select>
+                        <div id="metadata_list">
+                            <ul>
+                              <li id="age">Age: </li>
+                              <li id="bbtype">BBType: </li>
+                              <li id="ethnicity">Ethnicity: </li>
+                              <li id="gender">Gender: </li>
+                              <li id="location">Location: </li>
+                              <li id="sampleid">Sample ID: </li>
+                            </ul>
+                          </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div id="pie"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                            <div id="plot"></div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
